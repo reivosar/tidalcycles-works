@@ -1,0 +1,37 @@
+# Playing with chords
+## The list above can be combined with a root note using the ' to use with the synths in Super Dirt like this:
+
+d1 $ n "c'maj e'min" # s "supermandolin"
+
+## Samples tuned to concert C can also be used:
+
+d1 $ note "c'maj e'min" # s "gtr"
+
+## Chord inversions can be achieved by appending the ' to a chord, along with one or more i characters. The default state, without any i, is root position. A single i is the first inversion. A second inversion looks like this:
+
+d1 $ n "c'major7'ii" # s "supermandolin"
+
+## The number of notes in a chord can be modified by appending the ' to a chord, along with an integer. 6 notes can be played in the above chord inversion like this:
+
+d1 $ n "c'major7'6" # s "supermandolin"
+
+## An Open Voicing for a chord can be created by appending 'o to a chord. This will move the 1st and 3rd note in a chord 1 octave lower (usually Root and Fifth):
+
+d1 $ n "c'major7'o" # s "superpiano"
+
+## The root can be set as sharp or flat with s or f respectively:
+
+d1 $ n "cf'maj c'maj cs'maj" # s "supermandolin"
+
+## The octave can be set with a number. The default is 5:
+
+d1 $ n("c4'maj c5'maj c6'maj") # s "supermandolin"
+
+## The chords can be patterned using the |+ operator:
+
+d1 $ n ("c e f" |+ "<'maj 'min>") # s "supermandolin"
+
+## This will give a pattern equivalent to:
+
+d1 $ n "<[c'maj e'maj f'maj] [c'min e'min f'min]>" # s "supermandolin"
+
